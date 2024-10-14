@@ -1,0 +1,36 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Lista de Diretores</h1>
+
+
+<a href="{% url 'admin:data_loader_director_add' %}" class="btn btn-primary">Criar Novo Diretor</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Nacionalidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for director in directors %}
+        <tr>
+            <td>
+                <a href="{% url 'admin:data_loader_director_change' director.id %}">
+                    {{ director.name }}
+                </a>
+            </td>
+            <td>{{ director.birthdate }}</td>
+            <td>{{ director.nationality }}</td>
+            <td>
+                <a href="{% url 'admin:data_loader_director_change' director.id %}">Editar</a> |
+                <a href="{% url 'admin:data_loader_director_delete' director.id %}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
