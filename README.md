@@ -21,8 +21,8 @@ Este projeto é uma aplicação Django que faz o carregamento de uma planilha de
 
 2. Crie e ative um ambiente virtual:   
 
-   ```python -m venv venv
-   source venv/bin/activate```  # No Windows use venv\Scripts\activate
+   python -m venv venv
+   source venv/bin/activate  # No Windows use venv\Scripts\activate
 
 3. Instale as dependências do projeto:
 
