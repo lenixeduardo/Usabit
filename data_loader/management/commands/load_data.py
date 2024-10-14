@@ -1,12 +1,12 @@
 import pandas as pd
 import aiohttp
 import asyncio
+import os
 from django.core.management.base import BaseCommand
 from data_loader.models import Movie
 
-OMDB_API_URL = 'http://www.omdbapi.com/'
-OMDB_API_KEY = 'fece4a6f'  
-
+OMDB_API_URL = 'http://www.omdbapi.com/' 
+OMDB_API_KEY = os.getenv('OMDB_API_KEY')
 class Command(BaseCommand):
     help = 'Carrega dados de filmes de uma planilha, enriquece-os com a API OMDb e salva no banco de dados'
 
@@ -26,7 +26,7 @@ class Command(BaseCommand):
             return
 
         # Limpar e transformar os dados
-        data.fillna('', inplace=True)  # Exemplo de limpeza de dados
+        data.fillna('', inplace=True)  
         self.stdout.write(f"Carregando {len(data)} filmes da planilha.")
 
         # Fazer enriquecimento de dados via API OMDb

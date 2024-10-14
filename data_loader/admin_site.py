@@ -1,8 +1,8 @@
-# data_loader/admin_site.py
+
 from django.contrib.admin import AdminSite
 from django.urls import path
 from django.shortcuts import render
-from .models import Director  # Importando o novo modelo Director
+from .models import Director  
 
 class MyCustomAdminSite(AdminSite):
     site_header = 'Admin Customizado'
