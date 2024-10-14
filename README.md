@@ -32,11 +32,11 @@ Este projeto é uma aplicação Django que faz o carregamento de uma planilha de
 
 1. Configuração da Chave da API OMDb
 
-No arquivo settings.py configure a sua chave da OMDb API:
+Para configurar a chave da API OMDb, crie um arquivo .env na raiz do projeto (onde estão o manage.py e outros arquivos principais do projeto). Adicione a seguinte linha ao arquivo .env:
 
   ```OMDB_API_KEY = 'sua_chave_omdb_api'```
 
-Substitua 'sua_chave_omdb_api' pela chave da OMDb API que você obteve ao registrar-se no site OMDb API.
+O arquivo load_data.py já está configurado para carregar a chave da API do arquivo .env, então você não precisará modificar o código diretamente.
 
 2. Utilização do Banco de Dados:
 
@@ -72,5 +72,16 @@ Para criar execute:
 
 No Django Admin, você verá a interface customizada para gerenciar diretores de filmes e visualizar os dados enriquecidos pela OMDb API.
 
+## Estrutura do Projeto
 
+  - load_data.py: Comando Django personalizado para carregar dados de diretores a partir de uma planilha e enriquecê-los usando a OMDb API.
+  - admin.py:  Arquivo responsável por configurar a interface do Django Admin para gerenciar os modelos do projeto. Ele permite registrar modelos para que estejam disponíveis na interface administrativa e             personalizar como esses modelos e seus campos são exibidos .
+  - admin_site.py: Contém as customizações da interface do Django Admin para gerenciar diretores e exibir dados de filmes.
+  - models.py:  Este arquivo define mos modelos Movie e Director, que representam, respectivamente, os modelos de filmes e diretores na aplicação.
+
+
+Links Úteis:
+- [Django Documentation](https://docs.djangoproject.com/)
+- [OMDb API Documentation](http://www.omdbapi.com/)
+- [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/)
 
