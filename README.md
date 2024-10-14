@@ -21,12 +21,12 @@ Este projeto é uma aplicação Django que faz o carregamento de uma planilha de
 
 2. Crie e ative um ambiente virtual:   
 
-   python -m venv venv
-   source venv/bin/activate  # No Windows use venv\Scripts\activate
+   ```python -m venv venv
+   source venv/bin/activate```  # No Windows use venv\Scripts\activate
 
 3. Instale as dependências do projeto:
 
-   pip install -r requirements.txt
+   ```pip install -r requirements.txt```
    
 ### Configuração do Projeto
 
@@ -34,7 +34,7 @@ Este projeto é uma aplicação Django que faz o carregamento de uma planilha de
 
 No arquivo settings.py configure a sua chave da OMDb API:
 
-  OMDB_API_KEY = 'sua_chave_omdb_api'
+  ```OMDB_API_KEY = 'sua_chave_omdb_api'```
 
 Substitua 'sua_chave_omdb_api' pela chave da OMDb API que você obteve ao registrar-se no site OMDb API.
 
@@ -49,7 +49,7 @@ O banco de dados está localizado no diretório principal do projeto, e já cont
 
 1. Inicie o servidor de desenvolvimento:
 
-  python manage.py runserver
+ ``` python manage.py runserver```
 
 2. Acesse o Django Admin:
 
@@ -59,8 +59,9 @@ No navegador, vá até o seguinte endereço:
 
 Faça login com as credenciais fornecidas ou crie um superusuário com o seguinte comando:
 
-  python manage.py createsuperuser
+Para criar execute:
 
+ ``` python manage.py createsuperuser```
 
   credencial para teste:
 
